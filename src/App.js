@@ -4,7 +4,8 @@ import axios from 'axios';
 import './App.css'
 
 const App = () => {
-    axios.defaults.baseURL = 'http://localhost:5000';
+    axios.defaults.baseURL = process.env.REACT_APP_BACKEND_URL || '404 not found';
+    // console.log(process.env.REACT_APP_BACKEND_URL);
     const [users, setUsers] = useState([]);
     const [formData, setFormData] = useState({
         name: '',
